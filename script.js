@@ -3,7 +3,7 @@ request.open("GET", "https://restcountries.com/v3.1/all");
 request.send();
 request.onload = function () {
     var res = JSON.parse(request.response);
-
+    
     //1.Get all the countries from Asia continent /region using Filter method
     console.log("\n--All the countries from Asia continent /region using Filter method--")
     var countries = res.filter((a) => a.region == "Asia");
@@ -22,7 +22,7 @@ request.onload = function () {
     //3.Print the following details name, capital, flag, using forEach method
     console.log("\n--Name, Capital, Flag, using forEach method--")
     res.forEach(x => {
-        console.log(`${x.name.common} -- ${x.capital} -- ${x.flags.png}`);
+        console.log(`${x.name.common} -- ${x.capital} -- ${x.flag}`);
     });
 
     //4.Print the total population of countries using reduce method
